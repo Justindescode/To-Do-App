@@ -21,9 +21,24 @@ while True:
         new_todo = values['todo'] + "\n"
         todos.append(new_todo)
         functions.write_todos(todos)
+        window['todos'].update(values=todos)
+
+    elif event == "Edit":
+        todo_to_edit = values['todos'][0]
+        new_todo = values['todo']
+        
+        todos = functions.get_todos()
+        index = todos.index(todo_to_edit)
+        todos[index] = new_todo
+        functions.write_todos(todos)
+        window['todos'].update(values=todos)
+
+    elif 'todos':
+        window['todo'].update(value=values['todos'][0])
 
     elif event == sg.WIN_CLOSED:
         break
+
 
 window.close()
 
