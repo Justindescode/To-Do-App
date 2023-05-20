@@ -13,4 +13,4 @@ for todo in todos:
     option = st.checkbox(todo)
 
 
-st.text_input(label="", placeholder="Add a new todo...")
+st.text_input(label="", placeholder="Add a new todo....")
